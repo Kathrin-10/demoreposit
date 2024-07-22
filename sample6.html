@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <style> 
+        body{
+            margin: 0;
+        }
+        .myform{
+            display: flex;
+            flex-direction: column;
+            background-color: beige;
+            border-radius: 3px;
+            padding: 1em;
+            height: 100vh;
+        }
+        .row{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1em;
+        }
+        .column{
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+            flex: 1;
+        }
+        .input-group{
+            display: flex;
+            margin-bottom: 1em;
+        }
+        .input-group > label{
+            margin-right: 1em;
+            align-self: center;
+            flex: 1;
+        }
+        .myform input,
+        .myform select{
+            flex: 4;
+            padding: 0.5em;
+            margin-bottom: 1em;
+        }
+        .myform button{
+            padding: 1em;
+            background: green;
+            color: white;
+            border: 0;
+            cursor: pointer;
+        }
+        .myform fieldset{
+            border: 0;
+            margin-bottom: 1em;
+        }
+        .gender > label,
+        .skills > label{
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        legend {
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form class="myform">
+        <div class="row">
+            <h1>Students Registration Form</h1>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="input-group">
+                    <label for="Student_name">Name</label>
+                    <input id="Student_name" type="text" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone_number">Phone</label>
+                    <input type="tel" id="phone_number" required>
+                </div>
+                <div class="input-group">
+                    <label for="join_date">Date of Registration</label>
+                    <input type="datetime-local" id="join_date" required>
+                </div>
+                <div class="input-group">
+                    <label for="course">Course</label>
+                    <select id="course" required>
+                        <option value="" selected>Select</option>
+                        <option value="DCA">Diploma in Computer Application</option>
+                        <option value="HDCA">Honours Diploma in Computer Application</option>
+                        <option value="HDFD">Honours Diploma in Full Stack Developer</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="batch_timings">Batch Timings</label>
+                    <input type="text" id="batch_timings" list="timings" required>
+                    <datalist id="timings">
+                        <option value="9-11 AM">
+                        <option value="4-6 PM">
+                        <option value="6-8 PM">
+                    </datalist>    
+                </div>
+            </div>
+            <div class="column">
+                <fieldset class="gender">
+                    <legend>Gender</legend>
+                    <label><input type="radio" name="gender" value="female" required>Female</label>
+                    <label><input type="radio" name="gender" value="male">Male</label>
+                    <label><input type="radio" name="gender" value="others">Others</label>
+                </fieldset>
+               <div class="input-group">
+                <label for="skills">Skills Known</label>
+                <select id="skills" name="skills">
+                    <option value="" selected>Select</option>
+                    <option value="DCA">Diploma in Computer Application</option>
+                    <option value="HDCA">Honours Diploma in Computer Application</option>
+                    <option value="HDFD">Honours Diploma in Fullstack Developer</option>
+                </select>
+                
+               </div>
+                
+
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit">Register Now</button>
+        </div>
+    </form>
+</body>
+</html>
